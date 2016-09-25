@@ -10,10 +10,17 @@ h1 {
   font-size: 35px;
 }
 
-#instructions {
+h2 {
+  color: white;
+  font-family: 'Finger Paint', cursive;
+  font-size: 22px;
+}
+
+
+#instruct {
   text-align: center;
   color: white;
-  padding-bottom: 25px;
+  margin-bottom: 50px
 }
 
 .container1 {
@@ -55,11 +62,8 @@ h1 {
  }
 
  button {
-   background-color: grey;
-   color: white;
-   font-family: 'Raleway', sans-serif;
-   font-size: 15px;
-   font-weight:600;
+   background-color: rgba(255, 0, 0, 0.2);
+   border-radius: 10px;
    padding: 0px 10px;
    margin-top: 25px;
  }
