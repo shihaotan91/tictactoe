@@ -151,7 +151,7 @@ function winConditionX() {
   (three == 1 && six == 1 && nine == 1) ||
   (four == 1 && five == 1 && six == 1) ||
   (seven == 1 && eight == 1 && nine == 1))
-  {alert("X has won the game!"), xScore += 1}
+  {alert("X has won the game!"), xScore += 1, reset()}
   {xScore.innerHTML = '<h1>' + xScore + '</h1>'}
 
 }
@@ -166,26 +166,43 @@ function winConditionO() {
   (three == 2 && six == 2 && nine == 2) ||
   (four == 2 && five == 2 && six == 2) ||
   (seven == 2 && eight == 2 && nine == 2))
-  {alert("O has won the game!"), oScore += 1 }
+  {alert("O has won the game!"), oScore += 1, reset()}
   {oScore.innerHTML = '<h1>' + oScore + '</h1>'}
-}
 
+}
 button.addEventListener("click", function () {
     var outerBox = document.getElementsByTagName('outerbox');
     for(var i = 0; i < boxArray.length; i++) {
         boxArray[i].innerHTML = ''
         // boxArray[i] = 3
-        one = 3
-        two = 3
-        three = 3
-        four = 3
-        five = 3
-        six = 3
-        seven = 3
-        eight = 3
-        nine = 3
+        one = 0
+        two = 0
+        three = 0
+        four = 0
+        five = 0
+        six = 0
+        seven = 0
+        eight = 0
+        nine = 0
     }
 });
+
+function reset() {
+  for(var i = 0; i < boxArray.length; i++) {
+      boxArray[i].innerHTML = ''
+      // boxArray[i] = 3
+      one = 0
+      two = 0
+      three = 0
+      four = 0
+      five = 0
+      six = 0
+      seven = 0
+      eight = 0
+      nine = 0
+  }
+
+}
 
 // reset.addEventListener('click', function(event) {
 //   var remove = event.remove
