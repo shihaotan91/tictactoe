@@ -68,10 +68,10 @@ outerBox.addEventListener('click', function(event) {
 //  for (i = 0; i < boxArray.length; i++) {
 //    boxArray[i].addEventListener('click', function(event) {
 //      if (clicks == 0 || clicks % 2 == 0)
-//      {boxArray[i] = true;}
+//      {boxArray[i] = 1;}
 //
 //      else
-//      {boxArray[i] = false;}
+//      {boxArray[i] = 2;}
 //     }
 //   )
 // }
@@ -79,92 +79,93 @@ outerBox.addEventListener('click', function(event) {
 
 one.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {one = true}
+  {one = 1}
   else
-  {one = false}
+  {one = 2}
  }
 )
 two.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {two = true}
+  {two = 1}
   else
-  {two = false}
+  {two = 2}
  }
 )
 three.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {three = true}
+  {three = 1}
   else
-  {three = false}
+  {three = 2}
  }
 )
 four.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {four = true}
+  {four = 1}
   else
-  {four = false}
+  {four = 2}
  }
 )
 five.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {five = true}
+  {five = 1}
   else
-  {five = false}
+  {five = 2}
  }
 )
 six.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {six = true}
+  {six = 1}
   else
-  {six = false}
+  {six = 2}
  }
 )
 seven.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {seven = true}
+  {seven = 1}
   else
-  {seven = false}
+  {seven = 2}
  }
 )
 eight.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {eight = true}
+  {eight = 1}
   else
-  {eight = false}
+  {eight = 2}
  }
 )
 nine.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0)
-  {nine = true}
+  {nine = 1}
   else
-  {nine = false}
+  {nine = 2}
   }
 )
 
 function winConditionX() {
   if
-  ((one == true && two == true && three == true) ||
-  (one == true && five == true && nine == true) ||
-  (three == true && five == true && seven == true) ||
-  (one == true && four == true && seven == true) ||
-  (two == true && five == true && eight == true) ||
-  (three == true && six == true && nine == true) ||
-  (four == true && five == true && six == true) ||
-  (seven == true && eight == true && nine == true))
+  ((one == 1 && two == 1 && three == 1) ||
+  (one == 1 && five == 1 && nine == 1) ||
+  (three == 1 && five == 1 && seven == 1) ||
+  (one == 1 && four == 1 && seven == 1) ||
+  (two == 1 && five == 1 && eight == 1) ||
+  (three == 1 && six == 1 && nine == 1) ||
+  (four == 1 && five == 1 && six == 1) ||
+  (seven == 1 && eight == 1 && nine == 1))
   {alert("X has won the game!"), xScore += 1}
   {xScore.innerHTML = '<h1>' + xScore + '</h1>'}
+
 }
 
 function winConditionO() {
   if
-  ((one == false && two == false && three == false) ||
-  (one == false && five == false && nine == false) ||
-  (three == false && five == false && seven == false) ||
-  (one == false && four == false && seven == false) ||
-  (two == false && five == false && eight == false) ||
-  (three == false && six == false && nine == false) ||
-  (four == false && five == false && six == false) ||
-  (seven == false && eight == false && nine == false))
+  ((one == 2 && two == 2 && three == 2) ||
+  (one == 2 && five == 2 && nine == 2) ||
+  (three == 2 && five == 2 && seven == 2) ||
+  (one == 2 && four == 2 && seven == 2) ||
+  (two == 2 && five == 2 && eight == 2) ||
+  (three == 2 && six == 2 && nine == 2) ||
+  (four == 2 && five == 2 && six == 2) ||
+  (seven == 2 && eight == 2 && nine == 2))
   {alert("O has won the game!"), oScore += 1 }
   {oScore.innerHTML = '<h1>' + oScore + '</h1>'}
 }
@@ -173,7 +174,16 @@ button.addEventListener("click", function () {
     var outerBox = document.getElementsByTagName('outerbox');
     for(var i = 0; i < boxArray.length; i++) {
         boxArray[i].innerHTML = ''
-        boxArray[i] = ""
+        // boxArray[i] = 3
+        one = 3
+        two = 3
+        three = 3
+        four = 3
+        five = 3
+        six = 3
+        seven = 3
+        eight = 3
+        nine = 3
     }
 });
 
@@ -204,16 +214,6 @@ button.addEventListener("click", function () {
 //   {box = "circle"}
 // }
 // )
-
-// one = false
-// two = false
-// three = false
-// four = false
-// five = false
-// six = false
-// seven = false
-// eight = false
-// nine = false
 
  // var cross = new Image();
  // img.src = "img/cross.png";
