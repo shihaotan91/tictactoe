@@ -12,6 +12,18 @@ var button = document.querySelector('button')
 
 var clicks = 0
 
+var gun = document.getElementById("gun");
+
+function playAudio() {
+  gun.play();
+}
+
+var horse = document.getElementById("horse");
+
+function playAudio2() {
+  horse.play();
+}
+
 
 // xScore.innerHTML = '<h1>' + xScore + '</h1>'
 // oScore.innerHTML = '<h1>' + oScore + '</h1>'
@@ -47,6 +59,7 @@ outerBox.addEventListener('click', function(event) {
     target.appendChild(img);
     clicks += 1;
     instruct.innerHTML = "<h1>Player O's Turn!</h1>"
+    playAudio();
     winConditionX();
     document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
     drawCondition();
@@ -61,6 +74,7 @@ outerBox.addEventListener('click', function(event) {
   target.appendChild(img);
   clicks += 1;
   instruct.innerHTML = "<h1>Player X's Turn!</h1>"
+  playAudio2();
   winConditionO();
   document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
   drawCondition();
