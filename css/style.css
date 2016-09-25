@@ -1,0 +1,65 @@
+body {
+  /*background-color: black;*/
+  background-image: url("../img/background.png");
+  background-size: cover;
+}
+
+h1 {
+  color: red;
+  font-family: 'Finger Paint', cursive;
+  font-size: 35px;
+}
+
+#instructions {
+  text-align: center;
+  color: white;
+  padding-bottom: 25px;
+}
+
+.container1 {
+  width: 500px;
+  height: 500px;
+  float: left;
+  display:inline-block;
+  margin-left: 180px;
+}
+
+#outerbox {
+   border: 20px solid black;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   border: 5px solid red;
+   width: 400px;
+   height: 400px;
+   display:inline-block;
+   float:left
+ }
+
+ .box {
+   width: 32.8%;
+   height: 32.8%;
+   float: left;
+   border: 1px solid red;
+ }
+
+ .box:hover {
+   background-color: red;
+ }
+
+ .cointainer2 {
+ color: white;
+ display: inline-block;
+ float: left;
+ text-align:center;
+ }
+
+ button {
+   background-color: grey;
+   color: white;
+   font-family: 'Raleway', sans-serif;
+   font-size: 15px;
+   font-weight:600;
+   padding: 0px 10px;
+   margin-top: 25px;
+ }
