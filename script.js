@@ -12,8 +12,8 @@ var clicks = 0
 var xScore = 0
 var oScore = 0
 
-// xScore.innerHTML = '<h1>' + xScore + '</h1>'
-// oScore.innerHTML = '<h1>' + oScore + '</h1>'
+xScore.innerHTML = '<h1>' + xScore + '</h1>'
+oScore.innerHTML = '<h1>' + oScore + '</h1>'
 
 
 var one = document.getElementById('1')
@@ -45,8 +45,9 @@ outerBox.addEventListener('click', function(event) {
     img.style.margin = "13px";
     target.appendChild(img);
     clicks += 1;
-    instruct.innerHTML = "<h1>Player O's Turn</h1>"
+    instruct.innerHTML = "<h1>Player O's Turn!</h1>"
     winConditionX();
+    drawCondition();
   }
 
   else {
@@ -57,8 +58,9 @@ outerBox.addEventListener('click', function(event) {
   img.style.margin = "13px";
   target.appendChild(img);
   clicks += 1;
-  instruct.innerHTML = "<h1>Player X's Turn</h1>"
+  instruct.innerHTML = "<h1>Player X's Turn!</h1>"
   winConditionO();
+  drawCondition();
      }
    }
  )
@@ -151,9 +153,8 @@ function winConditionX() {
   (three == 1 && six == 1 && nine == 1) ||
   (four == 1 && five == 1 && six == 1) ||
   (seven == 1 && eight == 1 && nine == 1))
-  {alert("X has won the game!"), xScore += 1, reset()}
-  {xScore.innerHTML = '<h1>' + xScore + '</h1>'}
-
+  {alert("X has won the game! The board will now reset."), xScore += 1,
+  xScore.innerHTML = '<h1>' + xScore + '</h1>', reset()}
 }
 
 function winConditionO() {
@@ -166,15 +167,38 @@ function winConditionO() {
   (three == 2 && six == 2 && nine == 2) ||
   (four == 2 && five == 2 && six == 2) ||
   (seven == 2 && eight == 2 && nine == 2))
-  {alert("O has won the game!"), oScore += 1, reset()}
-  {oScore.innerHTML = '<h1>' + oScore + '</h1>'}
+  {alert("O has won the game! The board will now reset."), oScore += 1,
+  oScore.innerHTML = '<h1>' + oScore + '</h1>', reset()}
+}
+
+function drawCondition() {
+  if
+  ((one == 1 || one == 2) &&
+   (two == 1 || two == 2) &&
+   (three == 1 || three == 2) &&
+   (four == 1 || four == 2) &&
+   (five == 1 || five == 2) &&
+   (six == 1 || six == 2) &&
+   (seven == 1 || seven == 2) &&
+   (eight == 1 || eight == 2) &&
+   (nine == 1 || nine == 2))
+   {alert("It's a draw game! The board will now reset.", reset())}
 
 }
+
+// function drawCondition() {
+//   for (var i = 0; i < boxArray.length; i++)
+//   if (boxArray[i] == 1 || boxArray[i] == 2)
+//   alert("It's a draw game!")
+// }
+
+//create a draw condition
+
 button.addEventListener("click", function () {
     var outerBox = document.getElementsByTagName('outerbox');
     for(var i = 0; i < boxArray.length; i++) {
         boxArray[i].innerHTML = ''
-        // boxArray[i] = 3
+        // boxArray[i] = 0
         one = 0
         two = 0
         three = 0
@@ -185,12 +209,13 @@ button.addEventListener("click", function () {
         eight = 0
         nine = 0
     }
-});
+  }
+)
 
 function reset() {
   for(var i = 0; i < boxArray.length; i++) {
       boxArray[i].innerHTML = ''
-      // boxArray[i] = 3
+      // boxArray[i] = 0
       one = 0
       two = 0
       three = 0
@@ -201,7 +226,6 @@ function reset() {
       eight = 0
       nine = 0
   }
-
 }
 
 // reset.addEventListener('click', function(event) {
