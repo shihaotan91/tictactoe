@@ -2,18 +2,19 @@ var outerBox = document.getElementById('outerbox')
 var instruct = document.querySelector('h1')
 var box = document.getElementsByClassName('box')
 
-var xScore = document.getElementById('xScore')
-var oScore = document.getElementById('oScore')
+// var xScore = document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
+// var oScore = document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
+
+var xScore = 0
+var oScore = 0
 
 var button = document.querySelector('button')
 
 var clicks = 0
 
-var xScore = 0
-var oScore = 0
 
-xScore.innerHTML = '<h1>' + xScore + '</h1>'
-oScore.innerHTML = '<h1>' + oScore + '</h1>'
+// xScore.innerHTML = '<h1>' + xScore + '</h1>'
+// oScore.innerHTML = '<h1>' + oScore + '</h1>'
 
 
 var one = document.getElementById('1')
@@ -47,6 +48,7 @@ outerBox.addEventListener('click', function(event) {
     clicks += 1;
     instruct.innerHTML = "<h1>Player O's Turn!</h1>"
     winConditionX();
+    document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
     drawCondition();
   }
 
@@ -60,6 +62,7 @@ outerBox.addEventListener('click', function(event) {
   clicks += 1;
   instruct.innerHTML = "<h1>Player X's Turn!</h1>"
   winConditionO();
+  document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
   drawCondition();
      }
    }
@@ -153,8 +156,7 @@ function winConditionX() {
   (three == 1 && six == 1 && nine == 1) ||
   (four == 1 && five == 1 && six == 1) ||
   (seven == 1 && eight == 1 && nine == 1))
-  {alert("X has won the game! The board will now reset."), xScore += 1,
-  xScore.innerHTML = '<h1>' + xScore + '</h1>', reset()}
+  {alert("X has won the game! The board will now reset."), xScore += 1, reset()}
 }
 
 function winConditionO() {
@@ -167,8 +169,7 @@ function winConditionO() {
   (three == 2 && six == 2 && nine == 2) ||
   (four == 2 && five == 2 && six == 2) ||
   (seven == 2 && eight == 2 && nine == 2))
-  {alert("O has won the game! The board will now reset."), oScore += 1,
-  oScore.innerHTML = '<h1>' + oScore + '</h1>', reset()}
+  {alert("O has won the game! The board will now reset."), oScore += 1, reset()}
 }
 
 function drawCondition() {
@@ -183,7 +184,6 @@ function drawCondition() {
    (eight == 1 || eight == 2) &&
    (nine == 1 || nine == 2))
    {alert("It's a draw game! The board will now reset.", reset())}
-
 }
 
 // function drawCondition() {
