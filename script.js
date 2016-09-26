@@ -2,7 +2,6 @@ var outerBox = document.getElementById('outerbox')
 var instruct = document.querySelector('h1')
 var box = document.getElementsByClassName('box')
 
-
 var xScore = 0
 var oScore = 0
 
@@ -37,17 +36,8 @@ var seven = document.getElementById('7')
 var eight = document.getElementById('8')
 var nine = document.getElementById('9')
 
-function one (){}
-function two (){}
-function three (){}
-function four (){}
-function five (){}
-function six (){}
-function seven (){}
-function eight (){}
-function nine (){}
 
-outerBox.addEventListener('click', function(event) {
+box.addEventListener('click', function(event) {
   if (clicks == 0 || clicks % 2 == 0) {
     var target = event.target
     var img = document.createElement('img');
@@ -60,103 +50,125 @@ outerBox.addEventListener('click', function(event) {
     playAudio();
     winConditionX();
     document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
-    drawCondition();
+    draw();
   }
-
-  else {
-  var target = event.target
-  var img = document.createElement('img');
-  img.src = 'img/circle.png'; // path to the image
-  target.innerHTML = '';
-  img.style.margin = "14px";
-  target.appendChild(img);
-  clicks += 1;
-  instruct.innerHTML = "<h1>Player X's Turn!</h1>"
-  playAudio2();
-  winConditionO();
-  document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
-  drawCondition();
-     }
-   }
- )
-
- var boxArray = [one, two, three, four, five, six, seven, eight, nine]
-
-//  for (var i = 0; i < boxArray.length; i++) {
-//    boxArray[i].addEventListener('click', function(event) {
-//      if (clicks == 0 || clicks % 2 == 0)
-//      {boxArray[i] = 1;}
 //
-//      else
-//      {boxArray[i] = 2;}
-//     }
-//   )
-// }
+//   else
+//   {
+//   var target = event.target
+//   var img = document.createElement('img');
+//   img.src = 'img/circle.png'; // path to the image
+//   target.innerHTML = '';
+//   img.style.margin = "14px";
+//   target.appendChild(img);
+//   clicks += 1;
+//   instruct.innerHTML = "<h1>Player X's Turn!</h1>"
+//   playAudio2();
+//   winConditionO();
+//   document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
+//   draw();
+//      }
+//    }
+//  )
 
+ function cellClick(box)
+{
+document.getElementByClassName('box').removeAttribute('onClick');
+}
 
-one.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {one = 1}
-  else
-  {one = 2}
- }
-)
-two.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {two = 1}
-  else
-  {two = 2}
- }
-)
-three.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {three = 1}
-  else
-  {three = 2}
- }
-)
-four.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {four = 1}
-  else
-  {four = 2}
- }
-)
-five.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {five = 1}
-  else
-  {five = 2}
- }
-)
-six.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {six = 1}
-  else
-  {six = 2}
- }
-)
-seven.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {seven = 1}
-  else
-  {seven = 2}
- }
-)
-eight.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {eight = 1}
-  else
-  {eight = 2}
- }
-)
-nine.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0)
-  {nine = 1}
-  else
-  {nine = 2}
+// var boxArray = [one, two, three, four, five, six, seven, eight, nine]
+
+for (var i = 0; i < box.length; i++) {
+  box[i].addEventListener('click', function(event) {
+   changeStyling(event);
+   var img = document.createElement('img');
+       img.src = 'img/cross.png'; // path to the image
+       target.innerHTML = '';
+       img.style.margin = "14px";
+       target.appendChild(img);
+       clicks += 1;
+       instruct.innerHTML = "<h1>Player X's Turn!</h1>";
+       playAudio2();
+       winConditionO();
+       document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>';
+       draw();
+      }
+    )
   }
-)
+ //     if (clicks == 0 || clicks % 2 == 0) {
+ //       boxArray[i] = 1
+ //     } else {
+ //      boxArray[i] = 2
+ //     }
+ //  }
+ //)
+
+// function()
+
+
+// one.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {one = 1}
+//   else
+//   {one = 2}
+//  }
+// )
+// two.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {two = 1}
+//   else
+//   {two = 2}
+//  }
+// )
+// three.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {three = 1}
+//   else
+//   {three = 2}
+//  }
+// )
+// four.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {four = 1}
+//   else
+//   {four = 2}
+//  }
+// )
+// five.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {five = 1}
+//   else
+//   {five = 2}
+//  }
+// )
+// six.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {six = 1}
+//   else
+//   {six = 2}
+//  }
+// )
+// seven.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {seven = 1}
+//   else
+//   {seven = 2}
+//  }
+// )
+// eight.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {eight = 1}
+//   else
+//   {eight = 2}
+//  }
+// )
+// nine.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0)
+//   {nine = 1}
+//   else
+//   {nine = 2}
+//   }
+// )
 
 function winConditionX() {
   if
@@ -184,36 +196,25 @@ function winConditionO() {
   {alert("O has won the game! The board will now reset."), oScore += 1, reset()}
 }
 
-function drawCondition() {
-  for (var i = 0; i < boxArray.length; i ++) {
-  if
-  // (boxArray[i] == 1 || boxArray[i] == 2)
-  ((one == 1 || one == 2) &&
-   (two == 1 || two == 2) &&
-   (three == 1 || three == 2) &&
-   (four == 1 || four == 2) &&
-   (five == 1 || five == 2) &&
-   (six == 1 || six == 2) &&
-   (seven == 1 || seven == 2) &&
-   (eight == 1 || eight == 2) &&
-   (nine == 1 || nine == 2))
-   {alert("It's a draw! The board will now reset.", reset())}
+  function draw() {
+    if (clicks == 9)
+    {alert("It's a draw! The board will now reset.", reset())}
   }
+//
+
+
+function drawCondition() {
+  for (var i = 0; i < boxArray.length; i++)
+  if (boxArray[i] == 1 || boxArray[i] == 2)
+  alert("It's a draw game!")
 }
-
-// function drawCondition() {
-//   for (var i = 0; i < boxArray.length; i++)
-//   if (boxArray[i] == 1 || boxArray[i] == 2)
-//   alert("It's a draw game!")
-// }
-
-//create a draw condition
 
 button.addEventListener("click", function () {
     var outerBox = document.getElementsByTagName('outerbox');
     for(var i = 0; i < boxArray.length; i++) {
         boxArray[i].innerHTML = ''
         // boxArray[i] = 0
+        clicks = 0
         one = 0
         two = 0
         three = 0
@@ -231,6 +232,7 @@ function reset() {
   for(var i = 0; i < boxArray.length; i++) {
       boxArray[i].innerHTML = ''
       // boxArray[i] = 0
+      clicks = 0
       one = 0
       two = 0
       three = 0
@@ -240,8 +242,36 @@ function reset() {
       seven = 0
       eight = 0
       nine = 0
+    }
   }
-}
+
+  // function one (){}
+  // function two (){}
+  // function three (){}
+  // function four (){}
+  // function five (){}
+  // function six (){}
+  // function seven (){}
+  // function eight (){}
+  // function nine (){}
+
+  // function drawCondition() {
+  //   for (var i = 0; i < boxArray.length; i ++) {
+  //   if
+  //   // (boxArray[i] == 1 || boxArray[i] == 2)
+  //   ((one == 1 || one == 2) &&
+  //    (two == 1 || two == 2) &&
+  //    (three == 1 || three == 2) &&
+  //    (four == 1 || four == 2) &&
+  //    (five == 1 || five == 2) &&
+  //    (six == 1 || six == 2) &&
+  //    (seven == 1 || seven == 2) &&
+  //    (eight == 1 || eight == 2) &&
+  //    (nine == 1 || nine == 2))
+  //    {alert("It's a draw! The board will now reset.", reset())}
+  //   }
+  // }
+
 // var xScore = document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
 // var oScore = document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
 
