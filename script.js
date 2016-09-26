@@ -37,21 +37,21 @@ var eight = document.getElementById('8')
 var nine = document.getElementById('9')
 
 
-box.addEventListener('click', function(event) {
-  if (clicks == 0 || clicks % 2 == 0) {
-    var target = event.target
-    var img = document.createElement('img');
-    img.src = 'img/cross.png'; // path to the image
-    target.innerHTML = '';
-    img.style.margin = "14px";
-    target.appendChild(img);
-    clicks += 1;
-    instruct.innerHTML = "<h1>Player O's Turn!</h1>"
-    playAudio();
-    winConditionX();
-    document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
-    draw();
-  }
+// box.addEventListener('click', function(event) {
+//   if (clicks == 0 || clicks % 2 == 0) {
+//     var target = event.target
+//     var img = document.createElement('img');
+//     img.src = 'img/cross.png'; // path to the image
+//     target.innerHTML = '';
+//     img.style.margin = "14px";
+//     target.appendChild(img);
+//     clicks += 1;
+//     instruct.innerHTML = "<h1>Player O's Turn!</h1>"
+//     playAudio();
+//     winConditionX();
+//     document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
+//     draw();
+//   }
 //
 //   else
 //   {
@@ -71,30 +71,65 @@ box.addEventListener('click', function(event) {
 //    }
 //  )
 
- function cellClick(box)
-{
-document.getElementByClassName('box').removeAttribute('onClick');
-}
+//  function cellClick(box)
+// {
+// document.getElementByClassName('box').removeAttribute('onClick');
+// }
 
 // var boxArray = [one, two, three, four, five, six, seven, eight, nine]
+// box[i].addEventListener('click', function(changeStyling)
 
+
+// function that is called when you click a box
+function boxClick(){}
+
+//loop that adds the event listeners
 for (var i = 0; i < box.length; i++) {
-  box[i].addEventListener('click', function(event) {
-   changeStyling(event);
-   var img = document.createElement('img');
-       img.src = 'img/cross.png'; // path to the image
-       target.innerHTML = '';
-       img.style.margin = "14px";
-       target.appendChild(img);
-       clicks += 1;
-       instruct.innerHTML = "<h1>Player X's Turn!</h1>";
-       playAudio2();
-       winConditionO();
-       document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>';
-       draw();
-      }
-    )
-  }
+  box[i].addEventListener('click', boxClick())
+
+  if (clicks == 0 || clicks % 2 == 0)
+
+   {var target = box
+    var img = document.createElement('img');
+    img.src = 'img/cross.png'; // path to the image
+    box.innerHTML = '';
+    img.style.margin = "14px";
+    box.appendChild(img);
+    instruct.innerHTML = "<h1>Player O's Turn!</h1>"}
+
+      else
+     {var target = box
+      var img = document.createElement('img');
+      img.src = 'img/circle.png'; // path to the image
+      box.innerHTML = '';
+      img.style.margin = "14px";
+      box.appendChild(img);
+      instruct.innerHTML = "<h1>Player X's Turn!</h1>" }
+
+   }
+//  function changeStyling(event) {
+//  var target = event.target
+    //  }
+      //  target.appendChild(img);
+      //  clicks += 1;
+      //  instruct.innerHTML = "<h1>Player X's Turn!</h1>";
+      //  playAudio();
+      //  winConditionX();
+      //  document.getElementById('oScore').innerHTML = '<h1>' + xScore + '</h1>';
+      //  draw();
+
+
+      //  function changeStyling(event); {
+      //  var target = event.target
+
+        //  }
+
+          //  clicks += 1;
+          //  instruct.innerHTML = "<h1>Player X's Turn!</h1>";
+          //  playAudio2();
+          //  winConditionO();
+          //  document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>';
+          //  draw();}
  //     if (clicks == 0 || clicks % 2 == 0) {
  //       boxArray[i] = 1
  //     } else {
