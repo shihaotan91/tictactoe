@@ -2,8 +2,6 @@ var outerBox = document.getElementById('outerbox')
 var instruct = document.querySelector('h1')
 var box = document.getElementsByClassName('box')
 
-// var xScore = document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
-// var oScore = document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
 
 var xScore = 0
 var oScore = 0
@@ -55,7 +53,7 @@ outerBox.addEventListener('click', function(event) {
     var img = document.createElement('img');
     img.src = 'img/cross.png'; // path to the image
     target.innerHTML = '';
-    img.style.margin = "13px";
+    img.style.margin = "14px";
     target.appendChild(img);
     clicks += 1;
     instruct.innerHTML = "<h1>Player O's Turn!</h1>"
@@ -70,7 +68,7 @@ outerBox.addEventListener('click', function(event) {
   var img = document.createElement('img');
   img.src = 'img/circle.png'; // path to the image
   target.innerHTML = '';
-  img.style.margin = "13px";
+  img.style.margin = "14px";
   target.appendChild(img);
   clicks += 1;
   instruct.innerHTML = "<h1>Player X's Turn!</h1>"
@@ -84,7 +82,7 @@ outerBox.addEventListener('click', function(event) {
 
  var boxArray = [one, two, three, four, five, six, seven, eight, nine]
 
-//  for (i = 0; i < boxArray.length; i++) {
+//  for (var i = 0; i < boxArray.length; i++) {
 //    boxArray[i].addEventListener('click', function(event) {
 //      if (clicks == 0 || clicks % 2 == 0)
 //      {boxArray[i] = 1;}
@@ -187,7 +185,9 @@ function winConditionO() {
 }
 
 function drawCondition() {
+  for (var i = 0; i < boxArray.length; i ++) {
   if
+  // (boxArray[i] == 1 || boxArray[i] == 2)
   ((one == 1 || one == 2) &&
    (two == 1 || two == 2) &&
    (three == 1 || three == 2) &&
@@ -197,7 +197,8 @@ function drawCondition() {
    (seven == 1 || seven == 2) &&
    (eight == 1 || eight == 2) &&
    (nine == 1 || nine == 2))
-   {alert("It's a draw game! The board will now reset.", reset())}
+   {alert("It's a draw! The board will now reset.", reset())}
+  }
 }
 
 // function drawCondition() {
@@ -241,6 +242,8 @@ function reset() {
       nine = 0
   }
 }
+// var xScore = document.getElementById('xScore').innerHTML = '<h1>' + xScore + '</h1>'
+// var oScore = document.getElementById('oScore').innerHTML = '<h1>' + oScore + '</h1>'
 
 // reset.addEventListener('click', function(event) {
 //   var remove = event.remove
